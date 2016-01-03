@@ -448,3 +448,147 @@ glob 模式是指 shell 所使用的简化了的正则表达式：
         * d6016bc require time for xmlschema
         * 11d191e Merge branch 'defunkt' into local
     ```
+
+# git-extras
+
+## 基础
+
+-   安装
+
+    `$ sudo apt-get install git-extras`
+
+-   查看帮助
+
+    `$ git-extras`
+
+-   创建仓库
+
+    `$ git-setup`
+
+-   命令别名
+
+    `$ git-alias`
+
+-   生成修改日志
+
+    `$ git-changelog`
+
+-   基于当前仓库打包压缩文件
+
+    `$ git-archive-file`
+
+## 查看
+
+-   仓库基本信息
+
+    `$ git-info`
+
+-   仓库基本状态
+
+    `$ git-summary`
+
+-   查看某个作者的贡献
+
+    `$ git-contrib <author>`
+
+-   从一个时间点查看提交
+
+    `$ git-commits-since [last week | yesterday]`
+
+-   查看本地提交
+
+    `$ git-local-commits`
+
+-   查看提交树
+
+    `$ git-show-tree`
+    
+-   提交总数
+
+    `$ git-count [--all]`
+
+## 文件
+
+-   添加忽略
+
+    `$ git-ignore`
+
+-   文件基本状态
+
+    `$ git-effort [--above <number>]`
+
+-   创建并追踪新文件
+
+    `$ git-touch`
+
+-   完全地移除一个文件（包括仓库和提交）
+
+    `$ git-obliterate`
+
+## 提交
+
+-   撤销上次提交
+
+    `$ git-back`
+
+-   撤销 n 次提交
+
+    `$ git-undo <number>`
+
+    生成内容会保存在 History.md 中
+
+-   合并提交
+
+    `$ git-graft src dest`
+
+-   合并多个提交成为一个提交
+
+    `$ git-squash src-branch 'message'`
+
+## 分支
+
+-   创建空的本地分支
+
+    `$ git-fresh-branch`
+
+-   创建本地以及远程分支
+
+    `$ git-create-branch <name>`
+
+-   合并分支
+
+    `$ git-merge-into [src] dest`
+
+-   删除本地以及远程分支
+
+    `$ git-delete-branch <name>`
+
+-   删除所有已合并分支
+
+    `$ git-delete-merged-branches`
+
+    查看已合并分支列表： `$ git branch --merged`
+
+# gitignore.io
+
+## 基础
+
+-   安装
+
+    bash
+
+    `$ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bashrc && source ~/.bashrc`
+
+    zsh
+
+    `$ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc`
+
+## 生成
+
+-   项目类型列表
+
+    `$ gi list`
+
+-   输出重定向到 .gitignore
+
+    $ gi bower,node >> .gitignore
